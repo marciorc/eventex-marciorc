@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-import settings
+from django.conf import settings
 
 # Uncomment the next two lines to enable the admin:
 # from django.contrib import admin
@@ -19,7 +19,7 @@ urlpatterns = patterns('eventex.core.views',
     # url(r'^admin/', include(admin.site.urls)),
 )
 
-from django.conf import settings
+
 urlpatterns += patterns('django.views.static',
 	url(r'^static/(?P<path>.*)$', 'serve',
 		{'document_root': settings.STATIC_ROOT}),

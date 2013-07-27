@@ -5,8 +5,8 @@ import settings
 # from django.contrib import admin
 # admin.autodiscover()
 
-urlpatterns = patterns('eventex.core.views',
-	url(r'^$', 'homepage', name='homepage'),
+urlpatterns = patterns('',
+	url(r'^$', 'eventex.core.views.homepage', name='homepage'),
 
     # Examples:
     # url(r'^$', 'eventex.views.home', name='home'),

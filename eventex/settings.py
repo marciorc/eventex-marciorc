@@ -4,11 +4,11 @@ import dj_database_url
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    ('Marcio', 'marcio.ramos.correa@gmail.com'),
 )
 
 MANAGERS = ADMINS

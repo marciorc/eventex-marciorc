@@ -5,4 +5,9 @@ eventex-marciorc
 <h3>Márcio Ramos Corrêa</h3>
 
 ================
-Aula 1 - Welcome To The Django!
+
+<h4>Welcome To The Django!</h4>
+
+Colocando na prática:
+Aula 1
+Aula 2

@@ -9,8 +9,11 @@ from django.test import TestCase
 
 
 class SimpleTest(TestCase):
-    def test_basic_addition(self):
-        """
-        Tests that 1 + 1 always equals 2.
-        """
-        self.assertEqual(1 + 1, 2)
+    def test_get(self):
+        'GET / must return status code 200'
+        response = self.client.get('/')
+        self.assertEqual(200,response.status.code)
+
+    def test_template(self):
+    	'Home must use template index.html'
+        self.assertTemplateUsed(response, 'index.html')

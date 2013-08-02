@@ -1,0 +1,91 @@
+ @font-face{
+  font-family: 'Axure';
+  src: url('../font/AxureHandwriting-Bold.otf');
+ }
+
+ body{
+  padding:0;
+  margin:0;
+  font: 12px Arial ;
+ }
+
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+ 
+.clearfix {
+	display: inline-table;
+	height: 1%;
+	display: block;
+}
+
+#header{
+  background:#000;
+  height: 52px;
+
+}
+#header .logo{
+  padding: 5px 0 5px 20px ;
+}
+
+#content{
+  display:block;
+  position: relative;
+
+}
+#content .pg-home .container{
+   background: #838080; 
+   background-image: url('../img/banner-background.jpg');
+   background-position: center top;
+   text-align: center;
+}
+#content .pg-home .banner-em-breve{
+  height: 500px;
+  min-width: 300px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.pg-home .banner-em-breve .logotipo-grande{
+  margin: 54px 0;
+}
+
+.pg-home .banner-em-breve .txt-titulo{
+    font: 33px Axure;
+    color: #fff;
+    background: #000;
+    display: inline;
+    padding: 6px 10px;
+}
+.pg-home .banner-em-breve p{
+    font: 18px Axure;
+    color: #fff;
+    background: #000;
+    display: block;
+    padding: 6px 10px;
+
+    width: 400px;
+    margin: 72px auto;
+}
+
+
+#footer{}
+
+#footer .pg-home .contato{
+  margin:30px auto;
+  max-width: 500px;
+}
+
+#footer .pg-home .contato a {
+  text-decoration: none;
+  padding: 3px 4px;
+  color: #000;
+}
+
+#footer .pg-home .contato a:hover{
+  color: #fff;
+  background: #000;
+}

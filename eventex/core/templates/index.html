@@ -1,34 +1,36 @@
 <!DOCTYPE HTML PUBLIC "-­‐//W3C//DTD HTML4.01//EN">
+{% extends 'base.html' %}
 <html>
 	<head>
 		<title>EventeX</title>
-	   	<link type="text/css" href="{{STATIC_URL}}css/style.css" rel="stylesheet" media="screen"/>
-  	</head>
+		<link type="text/css" href="{{STATIC_URL}}css/style.css" rel="stylesheet" media="screen"/>
+	</head>
 <body>
 	<div id="header">
 		<img class="logo" src="{{ STATIC_URL }}img/logotipo.png" alt="">
 		<ul class="menu"></ul>
 	</div>
-
-    <div id="content">
-		<div class="pg-home">
-			<div class="container">
-				<div class="banner-em-breve">
-					
-					<img class="logotipo-grande" src="{{ STATIC_URL }}img/banner_eventx.png" alt=""><br>
-					<span class="txt-titulo">O evento mais sensacional do</span> <br> 
-					<span class="txt-titulo">ano depois do Dev in Rio</span>
-					
-					<br>
-					<p>
-						Você não pode perder esta oportunidade
-						<br>Abertura das inscrições em 21/04/2013
-					</p>
-
+		<div id="content">
+			{% block content %}
+				<div class="pg-home">
+					<div class="container">
+						<div class="banner-em-breve">
+							
+							<img class="logotipo-grande" src="{{ STATIC_URL }}img/banner_eventx.png" alt=""><br>
+							<span class="txt-titulo">O evento mais sensacional do</span> <br> 
+							<span class="txt-titulo">ano depois do Dev in Rio</span>
+							
+							<br>
+							<p>
+								Você não pode perder esta oportunidade
+								<br>Abertura das inscrições em 21/04/2013
+							</p>
+							<p><strong><a href="/inscricao/">Inscreva-se já!</a></strong></p>
+						</div>
+					</div>
 				</div>
-			</div>
-		</div>
-	</div>
+			{% endblock content %}
+		</div>	
 	<div id="footer">
 		<div class="pg-home">
 			<div class="contato">
@@ -37,6 +39,5 @@
 			</div>
 		</div>
 	</div>
-
 </body>
 </html>

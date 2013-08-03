@@ -7,7 +7,7 @@ from eventex.subscriptions.models import Subscription
 class SubscriptionTest(TestCase):
 	def setUp(self):
 		self.obj = Subscription(
-		name=u'Márcio Ramos Corrêa',
+		name=u'Márcio Ramos Corrêa', # 'u' do unicode!
 		cpf='12345678901',
 		email='marcio.ramos.correa@gmail.com',
 		phone='14-96274121'
@@ -22,10 +22,9 @@ class SubscriptionTest(TestCase):
 		self.obj.save()
 		self.assertIsInstance(self.obj.created_at, datetime)
 
-	#''' # slide 158
+	
 	def test_unicode(self):
 		self.assertEqual(u'Márcio Ramos Corrêa', unicode(self.obj))
-	#'''
 
 class SubscriptionUniqueTest(TestCase):
 	def setUp(self):

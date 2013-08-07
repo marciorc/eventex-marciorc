@@ -1,22 +1,17 @@
-"""
-This file demonstrates writing tests using the unittest module. These will pass
-when you run "manage.py test".
-
-Replace this with more appropriate tests for your application.
-"""
 #coding:utf-8
-from django.test import TestCase
 
+from django.test import TestCase
+from django.core.urlresolvers import reverse as r
 
 class SimpleTest(TestCase):
-    def setUp(self):
-    	self.resp=self.client.get('/')
+	def setUp(self):
+		self.resp=self.client.get(r('core:homepage'))
 
-    def test_get(self):
-        'GET / must return status code 200'
-        response = self.client.get('/')
-        self.assertEqual(200,self.resp.status_code)
+	def test_get(self):
+		'GET / must return status code 200'
+		response = self.client.get('/')
+		self.assertEqual(200,self.resp.status_code)
 
-    def test_template(self):
-    	'Home must use template index.html'
-        self.assertTemplateUsed(self.resp, 'index.html')
+	def test_template(self):
+		'Home must use template index.html'
+		self.assertTemplateUsed(self.resp, 'index.html')

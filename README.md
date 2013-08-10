@@ -1,13 +1,14 @@
 eventex-marciorc
 ================
-<h1>Desenvolvedor</h1>
-
+<h2>Desenvolvedor</h2>
 <h3>Márcio Ramos Corrêa</h3>
 
 ================
 
 <h4>Welcome To The Django!</h4>
 
-Colocando na prática:
-Aula 1
-Aula 2
+<p>Colocando na prática: <br />
+Aula 1 <br />
+Aula 2 <br />
+Aula 3 <br />
+</p>

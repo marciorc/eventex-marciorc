@@ -3,6 +3,7 @@
 <h1>Informe seus dados para realizar a inscrição</h1>
 <form action="." method="POST">
 	{% csrf_token %}
+	<!--{{ form.non_field_errors }}-->
 	<div class="banner-em-breve">
 		<p>
 			<label for="{{ form.name.id_for_label }}">{{ form.name.label }}:</label>

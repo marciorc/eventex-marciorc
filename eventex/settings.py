@@ -1,3 +1,4 @@
+# coding: utf-8
 # Django settings for eventex project.
 
 import dj_database_url
@@ -13,6 +14,11 @@ ADMINS = (
 )
 
 MANAGERS = ADMINS
+
+# Usar o South para preparar o banco nos testes?
+# True: Sim. (default)
+# False: Não! Use o Syncdb
+SOUTH_TESTS_MIGRATE = False
 
 DATABASES = {
     'default':  dj_database_url.config(default='sqlite:///'+ PROJECT_DIR.child('database.db'))
@@ -133,6 +139,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
+    'south',
     'eventex.core',
     'eventex.subscriptions',
 )

@@ -22,10 +22,13 @@ class SubscriptionTest(TestCase):
 		'Subscription must have automatic created_at'
 		self.obj.save()
 		self.assertIsInstance(self.obj.created_at, datetime)
-
 	
 	def test_unicode(self):
 		self.assertEqual(u'Márcio Ramos Corrêa', unicode(self.obj))
+
+	def test_paid_default_value_is_False(self):
+		'By default paid must be False.'
+		self.assertEqual(False, self.obj.paid)
 
 class SubscriptionUniqueTest(TestCase):
 	def setUp(self):

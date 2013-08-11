@@ -11,4 +11,8 @@ eventex-marciorc
 Aula 1 <br />
 Aula 2 <br />
 Aula 3 <br />
+<<<<<<< HEAD
 </p>
+=======
+</p>
+>>>>>>> 8e380ffa46abb02decd185ffd52ebfa341ab41d3

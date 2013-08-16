@@ -25,7 +25,6 @@ class PhoneWidget(forms.MultiWidget):
 			return [None, None]
 		return value.split('-')
 
-
 class PhoneField(forms.MultiValueField):
 	widget = PhoneWidget
 
@@ -42,7 +41,6 @@ class PhoneField(forms.MultiValueField):
 		if data_list[1] in EMPTY_VALUES:
 			raise forms.ValidationError(_(u'Número inválido'))
 		return '%s-%s' % tuple(data_list)
-
 
 class SubscriptionForm(forms.ModelForm):
 	phone = PhoneField(label=_('Telefone'), required=False)

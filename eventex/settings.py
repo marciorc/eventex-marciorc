@@ -6,7 +6,7 @@ import os
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
 
-DEBUG = os.environ.get('DEBUG') == 'False'
+DEBUG = os.environ.get('DEBUG') == 'True'
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (

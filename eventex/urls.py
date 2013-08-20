@@ -6,7 +6,8 @@ from django.contrib import admin
 admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^inscricao/', include('eventex.subscriptions.urls', namespace='subscriptions')),
+    url(r'^inscricao/', include('eventex.subscriptions.urls',
+        namespace='subscriptions')),
 
     # Examples:
     # url(r'^$', 'eventex.views.home', name='home'),

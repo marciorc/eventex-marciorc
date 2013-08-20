@@ -6,7 +6,7 @@ import os
 from unipath import Path
 PROJECT_DIR = Path(__file__).parent
 
-DEBUG = os.environ.get('DEBUG') == 'True'
+DEBUG = os.environ.get('DEBUG') == 'False'
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -166,7 +166,7 @@ LOGGING = {
             'filters': ['require_debug_false'],
             'class': 'django.utils.log.AdminEmailHandler'
         },
-        'console':{
+        'console': {
             'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',

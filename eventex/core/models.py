@@ -1,7 +1,8 @@
 # coding: utf-8
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from eventex.core.managers import KindContactManager
+from eventex.core.managers import KindContactManager, PeriodManager
+
 
 class Speaker(models.Model):
     name = models.CharField(_('Nome'), max_length=255)
@@ -16,8 +17,9 @@ class Speaker(models.Model):
     def get_absolute_url(self):
         return ('core:speaker_detail', (), {'slug': self.slug})
 
+
 class Contact(models.Model):
-    KINDS=(
+    KINDS = (
         ('P', _('Telefone')),
         ('E', _('E-mail')),
         ('F', _('Fax')),
@@ -35,11 +37,14 @@ class Contact(models.Model):
     def __unicode__(self):
         return self.value
 
+
 class Talk(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     start_time = models.TimeField(blank=True)
     speakers = models.ManyToManyField('Speaker', verbose_name=_('palestrantes'))
+
+    objects = PeriodManager()
 
     class Meta:
         verbose_name = _('palestra')

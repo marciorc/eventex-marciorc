@@ -1,30 +1,30 @@
 <!DOCTYPE HTML PUBLIC "-­‐//W3C//DTD HTML4.01//EN">
 <html>
-	<head>
-		<title>EventeX</title>
-		<link type="text/css" href="{{STATIC_URL}}css/style.css" rel="stylesheet" media="screen"/>
-		{% block scripts %}
-		{% endblock scripts %}
-	</head>
+    <head>
+        <title>EventeX</title>
+        <link type="text/css" href="{{STATIC_URL}}css/style.css" rel="stylesheet" media="screen"/>
+        {% block scripts %}
+        {% endblock scripts %}
+    </head>
 <body>
-	<div id="header">
-		<a href="/" alt="">
-			<img class="logo" src="{{ STATIC_URL }}img/logotipo.png" alt="">
-		</a>
-		<ul class="menu"></ul>
-	</div>
+    <div id="header">
+        <a href="/" alt="">
+            <img class="logo" src="{{ STATIC_URL }}img/logotipo.png" alt="">
+        </a>
+        <ul class="menu"></ul>
+    </div>
 
-	<div id="content">
-		{% block content %}
-		{% endblock content %}
-	</div>
-	<div id="footer">
-		<div class="pg-home">
-			<div class="contato">
-				Para dúvidas e mais informações entre em contato com 
-				<a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a>
-			</div>
-		</div>
-	</div>
+    <div id="content">
+        {% block content %}
+        {% endblock content %}
+    </div>
+    <div id="footer">
+        <div class="pg-home">
+            <div class="contato">
+                Para dúvidas e mais informações entre em contato com
+                <a href="mailto:eventex@eventex.com.br">eventex@eventex.com.br</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>

@@ -1,4 +1,5 @@
 # coding: utf-8
+
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 from eventex.core.managers import KindContactManager, PeriodManager
@@ -42,7 +43,7 @@ class Talk(models.Model):
     title = models.CharField(max_length=200)
     description = models.TextField()
     start_time = models.TimeField(blank=True)
-    speakers = models.ManyToManyField('Speaker', verbose_name=_('palestrantes'))
+    speakers = models.ManyToManyField('Speaker', verbose_name=_('palestrante'))
 
     objects = PeriodManager()
 
@@ -56,9 +57,32 @@ class Talk(models.Model):
     def get_absolute_url(self):
         return '/palestras/%d/' % self.pk
 
+    @property
+    def slides(self):
+        return self.media_set.filter(kind='SL')
+
+    @property
+    def videos(self):
+        return self.media_set.filter(kind='YT')
+
 
 class Course(Talk):
     slots = models.IntegerField()
     notes = models.TextField()
 
     objects = PeriodManager()
+
+
+class Media(models.Model):
+    MEDIAS = (
+        ('YT', _('YouTube')),
+        ('SL', _('SlideShare')),
+    )
+
+    talk = models.ForeignKey('Talk')
+    media_id = models.CharField(_('Ref'), max_length=255)
+    kind = models.CharField(_('Tipo'), max_length=2, choices=MEDIAS)
+    title = models.CharField(_(u'Título'), max_length=2)
+
+    def __unicode__(self):
+        return u'%s - %s' % (self.talk.title, self.title)

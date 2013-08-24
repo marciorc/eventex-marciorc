@@ -10,7 +10,7 @@ DEBUG = os.environ.get('DEBUG') == 'False'
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    ('Marcio', 'marcio.ramos.correa@gmail.com'),
+    ('admin', 'admin@admin.com'),
 )
 
 MANAGERS = ADMINS
@@ -97,6 +97,8 @@ STATICFILES_FINDERS = (
 #    'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
+AUTH_USER_MODEL = 'myauth.User'
+
 # Make this unique, and don't share it with anybody.
 SECRET_KEY = '-eynw@1!7_g3hp@zi+ui@2=(u%6xncv*!4il4vnl9u0q_6_m4)'
 
@@ -142,6 +144,7 @@ INSTALLED_APPS = (
     'south',
     'eventex.core',
     'eventex.subscriptions',
+    'eventex.myauth',
 )
 
 # A sample logging configuration. The only tangible logging

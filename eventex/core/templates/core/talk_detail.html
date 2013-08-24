@@ -3,14 +3,8 @@
 
 {% block content %}
     <h4>{{ talk.title }}</h4>
-    {% for speaker in talk.speakers.all %}
-        <h5>
-            <a href="{% url speaker %}"
-                title="{{ speaker.description|truncatewords:20 }}">
-                {{ speaker.name }}
-            </a>
-        </h5>
-    {% endfor %}
+    <p>{{ talk.start_time }}</p>
+    <p>{{ talk.description|linebreaks }}</p>
     <p>{{ talk.description }}</p>
     {% for video in talk.videos %}
         <p>{% youtube video.media_id %}</p>
